@@ -1,0 +1,16 @@
+
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥ùÚûýÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¬äÑÕ
+‘
+java:S1130"vRemove the declaration of thrown exception 'javax.mail.MessagingException', as it cannot be thrown from method's body.(¥ùÚûýÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(Å­Øçûÿÿÿÿ
+V	java:S1258"<This block of commented-out lines of code should be removed.(úÃ¨Îþÿÿÿÿ
+?
+java:S1128")Remove this unused import 'java.io.File'.(†Ð¥Å
+W
+java:S1128"<Remove this unused import 'javax.mail.internet.MimeMessage'.(«ÀÔ€þÿÿÿÿ
+`
+java:S1128"KRemove this unused import 'org.springframework.core.io.FileSystemResource'.(°ü‘4
+k
+java:S1128
+"PRemove this unused import 'org.springframework.mail.javamail.MimeMessageHelper'.(Ö€”÷øÿÿÿÿ
