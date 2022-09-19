@@ -1,15 +1,18 @@
 package com.example.Banking.application1.controller;
 
+import com.example.Banking.application1.PdfUtil;
 import com.example.Banking.application1.dto.DepositDto;
 import com.example.Banking.application1.dto.MyBankDto;
 import com.example.Banking.application1.dto.WithDrawDto;
 import com.example.Banking.application1.entity.MyBank;
+import com.example.Banking.application1.repository.MyBankRepository;
 import com.example.Banking.application1.service.MyBankService;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import javax.mail.MessagingException;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -32,6 +35,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyBankContoller {
   @Autowired
   private MyBankService myBankService;
+  @Autowired
+  private MyBankRepository myBankRepository;
   @PostMapping("/create-account")
   public ResponseEntity<MyBankDto>save(@RequestBody MyBankDto myBankDto) throws MessagingException {
     MyBankDto save=myBankService.save(myBankDto);
@@ -76,6 +81,17 @@ public  ResponseEntity<WithDrawDto>withDraw(@PathVariable String accountNumber,
     List<DepositDto> getStat=myBankService.getBankStatement(accountNumber);
     return new ResponseEntity<>(getStat,HttpStatus.OK);
   }
+  @GetMapping("/get-statemnts")
+  public void generatePdfStatements(HttpServletResponse response) throws IOException {
+response.setContentType("application/pdf");
+String headerKey="Content-Dispositon";
+String heaerValue="attachment; filename=user.pdf";
+response.setHeader(headerKey,heaerValue);
+List<MyBank>myBanks=myBankRepository.findAll();
+PdfUtil pdfUtil=new PdfUtil(myBanks);
+pdfUtil.DataToPdf(response);
+
+}
 
 
 }

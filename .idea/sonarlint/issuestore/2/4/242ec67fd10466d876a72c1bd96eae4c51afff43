@@ -1,0 +1,11 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½äÎùÿÿÿÿ
+Z
+java:S1128"=Remove this unused import 'javax.persistence.GeneratedValue'.(¤®À‚8Ï¨¤­´0
+Z
+java:S1128"=Remove this unused import 'javax.persistence.GenerationType'.(ı÷õ¡8Ï¨¤­´0
+Z
+java:S1128
+"8Remove this unused import 'javax.persistence.ManyToOne'.(ÇÑ²øÿÿÿÿ8“çì²0
+\
+java:S1128"@Remove this unused import 'javax.persistence.SequenceGenerator'.(ï™›98Ï¨¤­´0

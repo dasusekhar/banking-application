@@ -37,7 +37,7 @@ public class MyBank {
   @JoinColumn(name = "c_id", nullable = false)
   private List<Deposit> deposit;
   @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
- @JoinColumn(name = "with_draw_id")
+  @JoinColumn(name = "with_draw_id")
   private List<WithDraw> withDraw;
   private Long totalAmountAvaliable;
   private String email;
